@@ -1,1 +1,4 @@
-console.log("char-counter: linked");
+
+$(document).ready(function() {
+    console.log("char-counter: linked");
+});
