@@ -28,8 +28,15 @@ body {
 }
 article.tweet {
   margin-top: 15px;
-  
+  border-style: inset;
+  border-color: black;
 }
+
+article.tweet:hover {
+  border-color: yellowgreen;
+  border-width: 5px;
+}
+
 article.tweet header {
   background-color: aqua;
   height: 60px;
@@ -55,10 +62,10 @@ article.tweet p.body {
   align-self: center;
 }
 
-article.tweet .bordered {
+/* article.tweet .bordered {
   border-style: inset;
   border-color: black;
-}
+} */
 
 article.tweet footer {
   height: 30px;
@@ -70,6 +77,7 @@ article.tweet p.footer {
   align-self: center;
   margin-left: 10px;
 }
+
 
 article.tweet h1 {
   font-size: 2em;
