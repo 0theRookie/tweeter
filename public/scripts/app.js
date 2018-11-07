@@ -59,16 +59,24 @@ function renderTweets(tweets) {
     
 }
 
-function createTweetElement({ content: { text }}) {
+function createTweetElement({ 
+    content: { text },
+    user: { name }
+}) {
 
-    const $articleElm = $("<article>").addClass("tweet");// make article
-    const $tweetHeader = $("<header>").appendTo($articleElm).addClass("bordered");
-    const $tweetImg = $("<img>").appendTo($tweetHeader);
-    const $heading = $("<h1>").appendTo($tweetHeader);
-    const $handle = $("<span>").appendTo($tweetHeader);
-    const $pTag = $("<p>").text(text).appendTo($articleElm).addClass("body");
-    const $tweetFooter = $("<footer>").appendTo($articleElm).addClass("bordered");
     console.log('text: ', text);
+    console.log("Name: ", name);
+    console.log()
+    const $articleElm = $("<article>").addClass("tweet");// make article
+
+    const $tweetHeader = $("<header>").appendTo($articleElm).addClass("bordered");//header of tweet
+    const $tweetImg = $("<img>").appendTo($tweetHeader);
+    const $heading = $("<h1>").appendTo($tweetHeader).text(name);
+    const $handle = $("<span>").appendTo($tweetHeader);
+
+    const $pTag = $("<p>").text(text).appendTo($articleElm).addClass("body");//body of tweet
+
+    const $tweetFooter = $("<footer>").appendTo($articleElm).addClass("bordered");
     // let $postedTweet = $articleElm.text(text); //shove text from database in there
 
     return $articleElm;
