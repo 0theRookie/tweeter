@@ -1,8 +1,15 @@
 
-$(document).ready(function() {
-    console.log("DOM Ready");
+$(function() {
+    console.log("DOM ready");
 
-    $('textarea').on('keypress', function(event) {
-        console.log("Keypress!");
-    })
+    const textArea = $('textarea');
+    const maxChar = 140;
+
+    
+   textArea.on('input', function(event) {
+      console.log("textArea text length: ", this.textLength);
+      const $counter = $(this).parent().children('.counter');
+      $counter.text(maxChar - this.textLength);
+    });
+   
 });
