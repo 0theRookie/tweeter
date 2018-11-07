@@ -35,7 +35,6 @@ article.tweet {
 
 article.tweet:hover {
   border-color: rgb(160, 223, 36);
-  border-width: 4px;
   opacity: 1.0;
 }
 
@@ -75,15 +74,11 @@ article.tweet p.body {
   align-self: center;
 }
 
-/* article.tweet .bordered {
-  border-style: inset;
-  border-color: black;
-} */
-
 article.tweet footer {
   height: 30px;
   background-color: aqua;
   display: flex;
+  
 }
 article.tweet p.footer {
   font-size: small;

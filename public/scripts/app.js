@@ -49,27 +49,29 @@ let data = [
 function renderTweets(tweets) {
      // loops through tweets
     for(let i = 0; i < tweets.length; i++) {
-        const $tweet = createTweetElement(tweets[i]);    
+
+        const $tweet = createTweetElement(tweets[i]);// calls createTweetElement for each tweet 
         console.log("tweets: ", tweets);
-        let $appendedTweet = $('.tweet-container').append($tweet);
+        let $appendedTweet = $('.tweet-container').append($tweet);// takes return value and appends it to the tweets container
         console.log("appendedTweet: ", $appendedTweet);
     }
+   
     
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
 }
 
 function createTweetElement({ content: { text }}) {
 
     const $articleElm = $("<article>").addClass("tweet");// make article
+    const $tweetHeader = $("<header>").appendTo($articleElm).addClass("bordered");
+    const $tweetImg = $("<img>").appendTo($tweetHeader);
+    const $heading = $("<h1>").appendTo($tweetHeader);
+    const $handle = $("<span>").appendTo($tweetHeader);
+    const $pTag = $("<p>").text(text).appendTo($articleElm).addClass("body");
+    const $tweetFooter = $("<footer>").appendTo($articleElm).addClass("bordered");
     console.log('text: ', text);
-    let $postedTweet = $articleElm.text(text); //shove text from database in there
+    // let $postedTweet = $articleElm.text(text); //shove text from database in there
 
-    return $postedTweet;
+    return $articleElm;
 }
 
-
-// const $tweet = createTweetElement(data);
-
-// // console.log($tweet); // to see what it looks like
 renderTweets(data);
