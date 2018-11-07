@@ -49,24 +49,27 @@ let data = [
 function renderTweets(tweets) {
      // loops through tweets
     for(let i = 0; i < tweets.length; i++) {
-        console.log(tweets[i].user);
+        const $tweet = createTweetElement(tweets[i]);    
+        console.log("tweets: ", tweets);
+        let $appendedTweet = $('.tweet-container').append($tweet);
+        console.log("appendedTweet: ", $appendedTweet);
     }
     
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
 }
 
-// function createTweetElement(data) {
+function createTweetElement({ content: { text }}) {
 
-//     const $articleElm = $("<article>").addClass("tweet");// make article
-//     let $postedTweet = $articleElm.append(data.content.text); //shove text from database in there
+    const $articleElm = $("<article>").addClass("tweet");// make article
+    console.log('text: ', text);
+    let $postedTweet = $articleElm.text(text); //shove text from database in there
 
-//     return $postedTweet;
-// }
+    return $postedTweet;
+}
 
 
 // const $tweet = createTweetElement(data);
 
 // // console.log($tweet); // to see what it looks like
-// $('#tweet-container').append($tweet);
 renderTweets(data);
