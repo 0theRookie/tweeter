@@ -1,6 +1,12 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+$(function () {
+    console.log('DOM Ready');
+    const tweetArticle = $('article.tweet');
+
+    tweetArticle.on('mouseover', function(event) {
+        console.log("moused over");
+    })
+
+
+
+})
 

@@ -50,7 +50,7 @@ article.tweet span {
 
 article.tweet p.body {
   margin: auto;
-  padding: 15px;
+  padding: 10px;
   display: flex;
   align-self: center;
 }

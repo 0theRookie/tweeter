@@ -1,6 +1,6 @@
 
 $(function() {
-    console.log("DOM ready");
+    // console.log("DOM ready");
 
     const textArea = $('textarea');
     const maxChar = 140;
