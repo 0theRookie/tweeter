@@ -33,10 +33,15 @@ article.tweet {
 }
 
 article.tweet:hover {
-  border-color: yellowgreen;
-  border-width: 5px;
+  border-color: rgb(160, 223, 36);
+  border-width: 4px;
 }
 
+article.tweet img.hover {
+  height: 30px;
+  float: right;
+  margin-left: 250px;
+}
 article.tweet header {
   background-color: aqua;
   height: 60px;
