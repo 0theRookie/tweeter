@@ -17,8 +17,8 @@ const tweetData = {
 
 function createTweetElement(data) {
 
-    const $articleElm = $("<article>").addClass("tweet");
-    let $postedTweet = $articleElm.append(data.content.text);
+    const $articleElm = $("<article>").addClass("tweet");// make article
+    let $postedTweet = $articleElm.append(data.content.text); //shove text from database in there
 
     return $postedTweet;
 }
