@@ -26,3 +26,52 @@ body {
   margin-top: 140px;
   background-color: lightgray;
 }
+article.tweet {
+  margin-top: 15px;
+  
+}
+article.tweet header {
+  background-color: aqua;
+  height: 60px;
+  display: flex;
+
+}
+
+article.tweet img {
+  height: 60px;
+  float: left;
+}
+
+article.tweet span {
+  float: right;
+  font-size: small;
+  margin: auto;
+}
+
+article.tweet p.body {
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  align-self: center;
+}
+
+article.tweet .bordered {
+  border-style: inset;
+  border-color: black;
+}
+
+article.tweet footer {
+  height: 30px;
+  background-color: aqua;
+  display: flex;
+}
+article.tweet p.footer {
+  font-size: small;
+  align-self: center;
+  margin-left: 10px;
+}
+
+article.tweet h1 {
+  font-size: 2em;
+  margin: auto;
+}
