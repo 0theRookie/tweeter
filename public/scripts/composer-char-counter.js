@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
-    console.log("char-counter: dom ready");
+    console.log("DOM Ready");
 
-    $('textarea').on('keypress', (event) =>{
-        console.log("key!");
+    $('textarea').on('keypress', function(event) {
+        console.log("Keypress!");
     })
 });
