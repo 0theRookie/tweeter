@@ -1,10 +1,14 @@
 $(function () {
     console.log("DOM ready");
+
+    function createTweetElement(data) {
+        
+    }
 });
 
 
 
-
+createTweetElement(tweetData);
 
 const tweetData = {
     "user": {

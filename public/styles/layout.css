@@ -46,7 +46,7 @@ article.tweet img.hover {
   opacity: 0;
 }
 
-article.tweet img:hover {
+article.tweet:hover .hover {
   opacity: 1;
 }
 
