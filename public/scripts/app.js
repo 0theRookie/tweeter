@@ -65,9 +65,17 @@ $(function () {
   $form.submit((event) => {
     event.preventDefault();
     console.log("Button clicked\nMaking AJAX request...");
-    $.ajax().then(
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $form.serialize()
+    }).then(
       function (tweetPost) {
         console.log("Success: ", tweetPost);
+      }
+    ).fail(
+      function (jqXHR, textStatus, errorThrown) {
+        console.log("GOSH DARN IT!", textStatus, errorThrown)
       }
     )
   })
