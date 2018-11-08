@@ -61,10 +61,15 @@ let data = [
 
 
 $(function () {
-  const $newSubmit = $("#newSubmit");
-  $newSubmit.on('click', (event) => {
+  const $form = $("form");
+  $form.submit((event) => {
     event.preventDefault();
-    console.log(event.type);
+    console.log("Button clicked\nMaking AJAX request...");
+    $.ajax().then(
+      function (tweetPost) {
+        console.log("Success: ", tweetPost);
+      }
+    )
   })
 })
 
