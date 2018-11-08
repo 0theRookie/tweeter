@@ -7,7 +7,7 @@ $(function() {
 
     
     textArea.on('input', function(event) {
-        // console.log("textArea text length: ", this.textLength);
+        
         const $counter = $(this).parent().children('.counter');
         let curntCharCount = $counter.text(maxChar - this.textLength);
         //Checking if the characters is less than 0 

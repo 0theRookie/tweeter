@@ -42,6 +42,19 @@ let data = [
         "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
       },
       "created_at": 1461113796368
+    },
+    {
+        "user": {
+            "name": "Sheev Palpatine",
+            "avatars": {
+                "large": "https://2.bp.blogspot.com/-sNRJju80fWg/UXFNO8MviQI/AAAAAAAAS9M/ZPbIJ9NGrwM/s1600/senatorpalpatineepisode1.jpg"
+            },
+            "handle": "@theGalaxyIsMyApprentice"
+        },
+        "content": {
+            "text": "Have YOU heard the legend of Darth Plageus the Wise?"
+        },
+        "created_at": "A long long time ago..."
     }
   ];
 
@@ -61,17 +74,10 @@ function renderTweets(tweets) {
 
 function createTweetElement({ 
     content: { text },
-    user: { name, handle, avatars: 
-        { large } 
-},
-    created_at,
-}) {
-
-    console.log('text: ', text);
-    console.log("Name: ", name);
-    console.log("handle: ", handle)
-    console.log("avatar URL: ", large)
-    const $articleElm = $("<article>").addClass("tweet");// make article
+    user: { name, handle, avatars: { large } },
+    created_at }) {
+       
+    const $articleElm = $("<article>").addClass("tweet"); //creating article node
 
     const $tweetHeader = $("<header>").appendTo($articleElm).addClass("bordered");//header of tweet
     const $tweetImg = $("<img>").prop('src', large).appendTo($tweetHeader);
@@ -82,7 +88,8 @@ function createTweetElement({
 
     const $tweetFooter = $("<footer>").appendTo($articleElm).addClass("bordered");
     const $timestamp = $("<p>").appendTo($tweetFooter).text(created_at).addClass("footer");
-    // let $postedTweet = $articleElm.text(text); //shove text from database in there
+    const $footerIMG = $("<img>").addClass("hover").prop("src", 
+    "https://pbs.twimg.com/profile_images/663420200365113344/y_QbW_tm.png").appendTo($tweetFooter);
 
     return $articleElm;
 }
