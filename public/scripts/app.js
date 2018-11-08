@@ -62,6 +62,10 @@ function createTweetElement({
 function loadTweets() {
   $.get("/tweets").then(
     (tweets) => {
+      tweets.forEach((currentVal, index) => {
+        console.log("currentValue: ", currentVal);
+        console.log("index: ", index);
+    })
       renderTweets(tweets);
     }
   )
