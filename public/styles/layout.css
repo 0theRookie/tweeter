@@ -31,6 +31,7 @@ article.tweet {
   border-style: inset;
   border-color: black;
   opacity: .75;
+  background-color: bisque;
 }
 
 article.tweet:hover {

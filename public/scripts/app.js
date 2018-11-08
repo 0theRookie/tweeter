@@ -61,23 +61,27 @@ function renderTweets(tweets) {
 
 function createTweetElement({ 
     content: { text },
-    user: { name, handle },
+    user: { name, handle, avatars: 
+        { large } 
+},
     created_at,
 }) {
 
     console.log('text: ', text);
     console.log("Name: ", name);
     console.log("handle: ", handle)
+    console.log("avatar URL: ", large)
     const $articleElm = $("<article>").addClass("tweet");// make article
 
     const $tweetHeader = $("<header>").appendTo($articleElm).addClass("bordered");//header of tweet
-    const $tweetImg = $("<img>").appendTo($tweetHeader);
+    const $tweetImg = $("<img>").prop('src', large).appendTo($tweetHeader);
     const $heading = $("<h1>").appendTo($tweetHeader).text(name);
     const $handle = $("<span>").appendTo($tweetHeader).text(handle);
 
     const $pTag = $("<p>").text(text).appendTo($articleElm).addClass("body");//body of tweet
 
     const $tweetFooter = $("<footer>").appendTo($articleElm).addClass("bordered");
+    const $timestamp = $("<p>").appendTo($tweetFooter).text(created_at).addClass("footer");
     // let $postedTweet = $articleElm.text(text); //shove text from database in there
 
     return $articleElm;
