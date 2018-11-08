@@ -1,3 +1,4 @@
+$(() => {
 let data = [
     {
       "user": {
@@ -59,6 +60,15 @@ let data = [
   ];
 
 
+$(function () {
+  const $newSubmit = $("#newSubmit");
+  $newSubmit.on('click', (event) => {
+    event.preventDefault();
+    console.log(event.type);
+  })
+})
+
+
 function renderTweets(tweets) {
      // loops through tweets
     for(let i = 0; i < tweets.length; i++) {
@@ -95,3 +105,4 @@ function createTweetElement({
 }
 
 renderTweets(data);
+});
