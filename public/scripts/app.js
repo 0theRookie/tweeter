@@ -1,25 +1,38 @@
 $(() => {
+loadTweets();
+
 let data = [];
 
 
 $(function () {
   const $form = $("form");
+  const $text = $("#addTweet");
+
   $form.submit((event) => {
     event.preventDefault();
     console.log("Button clicked\nMaking AJAX request...");
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: $form.serialize()
-    }).then(
-      function (tweetPost) {
-        console.log("Success: ", tweetPost);
-      }
-    ).fail(
-      function (jqXHR, textStatus, errorThrown) {
-        console.log("GOSH DARN IT!", textStatus, errorThrown)
-      }
-    )
+    console.log($text.val().length);
+
+    if ($text.val().length > 140)  {
+      console.log("Request halted");
+      alert("Invalid Entry\nToo many characters!")
+    } else if (!$text.val().length) {
+      console.log("Request halted");
+      alert("Invalid Entry\nPlease fill in the input field!")
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: $form.serialize()
+      }).then(
+        function (res) {
+          loadTweets();        
+        }).fail(
+        function (jqXHR, textStatus, errorThrown) {
+          console.log("GOSH DARN IT!", textStatus, errorThrown)
+        }
+      )
+    }
   })
 })
 
@@ -27,7 +40,6 @@ $(function () {
 function renderTweets(tweets) {
      // loops through tweets
     for(let i = 0; i < tweets.length; i++) {
-
         const $tweet = createTweetElement(tweets[i]);// calls createTweetElement for each tweet 
         // console.log("tweets: ", tweets);
         let $appendedTweet = $('.tweet-container').prepend($tweet);// takes return value and appends it to the tweets container
@@ -62,14 +74,9 @@ function createTweetElement({
 function loadTweets() {
   $.get("/tweets").then(
     (tweets) => {
-      tweets.forEach((currentVal, index) => {
-        console.log("currentValue: ", currentVal);
-        console.log("index: ", index);
-    })
       renderTweets(tweets);
     }
   )
 }
 
-loadTweets();
 });
