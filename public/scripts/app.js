@@ -4,12 +4,10 @@ loadTweets();
 let data = [];
 
 $(function () {
-  const $composeBox = $('#composeBox');
-  $composeBox.hide();
+  const $composeBox = $('#composeBox').hide();
   $('#composeHeader').click(() => {
     $composeBox.slideToggle();
     $('#addTweet').focus();
-    console.log($composeBox);
   })
 });
 
@@ -22,7 +20,6 @@ $(function () {
   $form.submit((event) => {
     event.preventDefault();
     console.log("Button clicked\nMaking AJAX request...");
-    console.log($text.val().length);
 
     if ($text.val().length > 140)  {
       console.log("Request halted");
@@ -53,10 +50,9 @@ $(function () {
 function renderTweets(tweets) {
      // loops through tweets
     for(let i = 0; i < tweets.length; i++) {
-        const $tweet = createTweetElement(tweets[i]);// calls createTweetElement for each tweet 
-        // console.log("tweets: ", tweets);
+        const $tweet = createTweetElement(tweets[i]);// calls createTweetElement for each tweet cd
         let $appendedTweet = $('.tweet-container').prepend($tweet);// takes return value and appends it to the tweets container
-        // console.log("appendedTweet: ", $appendedTweet);
+      
     }
    
     
