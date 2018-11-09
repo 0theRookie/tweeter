@@ -11,13 +11,30 @@
 }
 
 #nav-bar {
-    background-color: #00a087;
+    background-color: #A2D00A;
     color: #e8fdff;
     height: 80px;
     margin-left: 0px;
     padding-left: 2em;
     padding-right: 2em;
 }
+
+#composeHeader {
+    float: right;
+    padding: 20px;
+    margin-top: 9px;
+    margin-right: 3em;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: seagreen;
+    color: white;
+}
+
+#composeHeader:hover {
+    background-color: #ABFBCA;
+    border-color: black;
+    color: black;
+}  
 
 main.container {
     width: 450px;
