@@ -26,14 +26,16 @@
     margin-right: 3em;
     border-radius: 15px;
     border: 2px solid white;
-    background-color: seagreen;
+    background-color: gray;
     color: white;
+    opacity: .65;
 }
 
 #composeHeader:hover {
     background-color: #ABFBCA;
     border-color: black;
     color: black;
+    opacity: 1;
 }  
 
 main.container {

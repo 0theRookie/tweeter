@@ -3,6 +3,14 @@ loadTweets();
 
 let data = [];
 
+$(function () {
+  const $composeBox = $('#composeBox');
+  $composeBox.hide();
+  $('#composeHeader').click(() => {
+    $composeBox.slideToggle();
+  })
+});
+
 
 $(function () {
   const $form = $("form");
@@ -25,7 +33,7 @@ $(function () {
         url: '/tweets',
         data: $form.serialize()
       }).then(
-        function (res) {
+        function () {
           loadTweets();        
         }).fail(
           function (jqXHR, textStatus, errorThrown) {
