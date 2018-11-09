@@ -28,12 +28,13 @@ $(function () {
         function (res) {
           loadTweets();        
         }).fail(
-        function (jqXHR, textStatus, errorThrown) {
-          console.log("GOSH DARN IT!", textStatus, errorThrown)
-        }
-      )
+          function (jqXHR, textStatus, errorThrown) {
+            console.log("GOSH DARN IT!", textStatus, errorThrown)
+        })
+        $form[0].reset();
     }
   })
+
 })
 
 
