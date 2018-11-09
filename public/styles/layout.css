@@ -25,6 +25,8 @@ body {
   padding: 10px;
   margin-top: 140px;
   background-color: lightgray;
+  border: 3px solid black;
+  border-radius: 7px;
 }
 article.tweet {
   margin-top: 15px;
@@ -91,4 +93,13 @@ article.tweet p.footer {
 article.tweet h1 {
   font-size: 2em;
   margin: auto;
+}
+
+#err {
+  color: red;
+}
+
+#line {
+  border-color: black;
+  opacity: .65;
 }

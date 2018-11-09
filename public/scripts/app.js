@@ -8,6 +8,8 @@ $(function () {
   $composeBox.hide();
   $('#composeHeader').click(() => {
     $composeBox.slideToggle();
+    $('#addTweet').focus();
+    console.log($composeBox);
   })
 });
 
@@ -15,6 +17,7 @@ $(function () {
 $(function () {
   const $form = $("form");
   const $text = $("#addTweet");
+  const $err = $('<div>').prop('id', 'err').appendTo('#composeBox').hide();
 
   $form.submit((event) => {
     event.preventDefault();
@@ -23,11 +26,12 @@ $(function () {
 
     if ($text.val().length > 140)  {
       console.log("Request halted");
-      alert("Invalid Entry\nToo many characters!")
+      $err.slideDown().text("Invalid Entry! Maximum 140 characters");
     } else if (!$text.val().length) {
       console.log("Request halted");
-      alert("Invalid Entry\nPlease fill in the input field!")
+      $err.slideDown().text("Invalid Entry! Please fill out the text field");
     } else {
+      $err.slideUp();
       $.ajax({
         type: 'POST',
         url: '/tweets',
