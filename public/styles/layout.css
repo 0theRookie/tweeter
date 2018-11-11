@@ -89,6 +89,12 @@ article.tweet p.footer {
   margin-left: 10px;
 }
 
+article.tweet p.body {
+  width: 100%;
+  display: block;
+  word-wrap: break-word;
+}
+
 
 article.tweet h1 {
   font-size: 2em;
@@ -97,9 +103,18 @@ article.tweet h1 {
 
 #err {
   color: red;
+  margin-left: 100px;
 }
 
 #line {
   border-color: black;
   opacity: .65;
+}
+
+.counter {
+  margin-left: 310px;
+}
+
+#newSubmit {
+  float: left;
 }

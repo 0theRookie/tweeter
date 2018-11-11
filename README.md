@@ -2,7 +2,12 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+You can post with a random ID, and your post will be saved to the database, allowing it to be reloaded even through server restart. Hovering over each message highlights it, and shows you a nice little kappa to keep your spirits high. 
+
+*Posts cannot exceed the maximum of 140 characters.*
+*Posts must have content to them to be posted.*
+
+If these 2 requirements are not met, you will be met with an error and your post will not be saved. But the compose box will tell you that itself!
 
 ## Getting Started
 
@@ -15,3 +20,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- MongoDB
+- Chance
+
