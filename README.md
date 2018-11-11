@@ -10,7 +10,9 @@ You can post with a random ID, and your post will be saved to the database, allo
 If these 2 requirements are not met, you will be met with an error and your post will not be saved. But the compose box will tell you that itself!
 
 ## Screenshots
-!["See previous posts, loaded from database"]()
+!["See previous posts, loaded from database"](https://github.com/0theRookie/tweeter/blob/master/docs/homePage.png)
+
+!["Add your own posts, meeting minimum and maximum character length"](https://github.com/0theRookie/tweeter/blob/master/docs/composeTweet.png)
 
 
 ## Getting Started
