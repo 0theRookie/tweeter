@@ -3,8 +3,9 @@
 }
 
  h2 {
-    text-decoration: underline;
     padding-left: 50px;
+    margin-left: 50px;
+    margin-bottom: 10px;
 }
 
 textarea {

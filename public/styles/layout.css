@@ -62,6 +62,8 @@ article.tweet header {
 article.tweet img {
   height: 60px;
   float: left;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 article.tweet span {
