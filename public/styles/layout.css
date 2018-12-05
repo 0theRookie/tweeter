@@ -43,8 +43,6 @@ article.tweet:hover {
 
 article.tweet img.hover {
   height: 30px;
-  float: right;
-  margin-left: 250px;
   opacity: 0;
 }
 
@@ -85,6 +83,7 @@ article.tweet footer {
   display: flex;
   
 }
+
 article.tweet p.footer {
   font-size: small;
   align-self: center;
