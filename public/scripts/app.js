@@ -3,16 +3,16 @@ loadTweets();
 
 let data = [];
 
-$(function () {
+(function () {
   const $composeBox = $('#composeBox').hide();
   $('#composeHeader').click(() => {
     $composeBox.slideToggle();
     $('#addTweet').focus();
   })
-});
+})();
 
 
-$(function () {
+(function () {
   const $form = $("form");
   const $text = $("#addTweet");
   const $err = $('<div>').prop('id', 'err').appendTo('#composeBox').hide();
